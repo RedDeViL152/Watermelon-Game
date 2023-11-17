@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateNewObjects : MonoBehaviour
+public class SpawnObjects : MonoBehaviour
 {
     private Vector3 startPosition = new Vector3(0, 2, 0);
     [SerializeField] private GameObject[] players;
@@ -23,9 +23,6 @@ public class CreateNewObjects : MonoBehaviour
 
     public void CreateNewObject()
     {
-        foreach (GameObject player in players)
-        {
-            Instantiate(player, startPosition, Quaternion.identity);
-        }
+        Instantiate(players[Random.Range(0, 3)], startPosition, Quaternion.identity);
     }
 }

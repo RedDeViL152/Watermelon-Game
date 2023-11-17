@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.simulated = false;
+        rb.gravityScale = 0;
         player.position = startPosition;
     }
 
@@ -48,15 +48,8 @@ public class Player : MonoBehaviour
     public void DropOnClicked()
     {
         isFollowingMouse = false;
-        rb.simulated = true;
+        rb.gravityScale = 1;
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Object1"))
-    //    {
-    //        Destroy(this.gameObject);
-    //        //Instantiate(Object2, transform.position, Quaternion.identity);
-    //    }
-    //}
+
 }
