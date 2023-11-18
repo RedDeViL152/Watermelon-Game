@@ -35,16 +35,16 @@ public class Object : MonoBehaviour
         {
             rb.gravityScale = 1;
             inTheAir = false;
-            SpawnObjects.spawnedYet = false;
+            ObjectSpawner.spawnedYet = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == gameObject.tag)
         {
-            SpawnObjects.spawnPosition = transform.position;
-            SpawnObjects.newObjectSpawned = true;
-            SpawnObjects.whichObject = int.Parse(gameObject.tag);
+            ObjectSpawner.spawnPosition = transform.position;
+            ObjectSpawner.newObjectSpawned = true;
+            ObjectSpawner.whichObject = int.Parse(gameObject.tag);
             Destroy(gameObject);
         }
     }

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObjects : MonoBehaviour
+public class ObjectSpawner : MonoBehaviour
 {
     public static Vector3 spawnPosition;
     public static bool newObjectSpawned = false;
     public static bool spawnedYet = false;
     public static int whichObject = 0;
-    
+
     [SerializeField] private Transform[] objects;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,8 +37,8 @@ public class SpawnObjects : MonoBehaviour
 
     public void ReplaceFruit()
     {
-        
-        if(newObjectSpawned == true)
+
+        if (newObjectSpawned == true)
         {
             newObjectSpawned = false;
             Instantiate(objects[whichObject + 1], spawnPosition, Quaternion.identity);
@@ -49,6 +49,6 @@ public class SpawnObjects : MonoBehaviour
     {
         yield return new WaitForSeconds(.75f);
         Instantiate(objects[Random.Range(0, 2)], transform.position, Quaternion.identity);
-        
+
     }
 }
