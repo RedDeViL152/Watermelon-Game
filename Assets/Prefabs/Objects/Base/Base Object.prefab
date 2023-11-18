@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9133859897703265750}
   - component: {fileID: 429273224192251660}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Base Object
   m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9133859897703265707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: f5be0e146b5e88f45ab62bb135ff60d0, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &429273224192251660
 MonoBehaviour:
