@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 9133859897703265705}
   - component: {fileID: 9133859897703265751}
   - component: {fileID: 9133859897703265750}
-  - component: {fileID: 9133859897703265749}
+  - component: {fileID: 7538745557669622794}
   m_Layer: 0
   m_Name: Circle 1
-  m_TagString: Object3
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9133859897703265707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 9133859897703265707}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f5be0e146b5e88f45ab62bb135ff60d0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -112,19 +112,19 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9133859897703265707}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9133859897703265749
+--- !u!114 &7538745557669622794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,9 +133,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9133859897703265707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6250b688726a713448a27266c1d194c4, type: 3}
+  m_Script: {fileID: 11500000, guid: a97fc3ed847ee9b4195bc7cc1367cd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9133859897703265704}
-  minX: -1.5
-  maxX: 1.5

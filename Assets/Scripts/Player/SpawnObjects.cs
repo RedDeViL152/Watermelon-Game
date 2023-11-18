@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
-    private Vector3 startPosition = new Vector3(0, 2, 0);
-    [SerializeField] private GameObject[] players;
+    public static Vector3 spawnPosition;
+    public static bool newObjectSpawned = false;
+    public static bool spawnedYet = false;
+    public static int whichObject = 0;
+    
+    [SerializeField] private Transform[] objects;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +21,34 @@ public class SpawnObjects : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            CreateNewObject();
+            CreateNewObjects();
+        }
+        ReplaceFruit();
+    }
+
+    public void CreateNewObjects()
+    {
+        if (spawnedYet == false)
+        {
+            StartCoroutine(SpawnTimer());
+            spawnedYet = true;
         }
     }
 
-    public void CreateNewObject()
+    public void ReplaceFruit()
     {
-        Instantiate(players[Random.Range(0, 3)], startPosition, Quaternion.identity);
+        
+        if(newObjectSpawned == true)
+        {
+            newObjectSpawned = false;
+            Instantiate(objects[whichObject + 1], spawnPosition, Quaternion.identity);
+        }
+    }
+
+    IEnumerator SpawnTimer()
+    {
+        yield return new WaitForSeconds(.75f);
+        Instantiate(objects[Random.Range(0, 2)], transform.position, Quaternion.identity);
+        
     }
 }
