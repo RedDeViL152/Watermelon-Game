@@ -1,17 +1,19 @@
+using EasyUnityInternals;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoader : SingletonMB<SceneLoader>
 {
+    public static SceneLoader GetInstance => GetOrCreateInstance();
+    public const string MAIN_MENU_SCENE = "Main";
     public const string GAME_PLAY_SCENE = "Game";
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -24,12 +26,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(GAME_PLAY_SCENE);
     }
-    public void OpenSetting()
+    public void OpenMainMenu()
     {
-
-    }
-    public void OpenInfo()
-    {
-
+        SceneManager.LoadScene(MAIN_MENU_SCENE);
     }
 }
