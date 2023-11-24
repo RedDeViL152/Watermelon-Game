@@ -22,6 +22,10 @@ public class SceneLoader : SingletonMB<SceneLoader>
         
     }
 
+    public void SceneInitialize()
+    {
+        SceneManager.LoadScene(MAIN_MENU_SCENE);
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(GAME_PLAY_SCENE);
